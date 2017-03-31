@@ -1,0 +1,20 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<form action="/domains" method="post">
+    <input type="submit" value="Update">
+</form>
+
+{% if lines %}
+<h2>{{title}} list:</h2>
+<table border="1">
+    {% for line in lines %}
+    <tr>
+        <td>{{ line }}</td>
+    </tr>
+    {% endfor %}
+</table>
+{% endif %}
+
+{% endblock %}

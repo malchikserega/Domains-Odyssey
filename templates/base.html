@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<style>
+    table {border:4px black;}
+</style>
+<head>
+    <meta charset="UTF-8">
+    <title>{{ title }}</title>
+
+</head>
+<body>
+    <form action="/domains">
+        <input type="submit" value="Domains (Новые домены)" />
+    </form>
+    <form action="/whitelist">
+        <input type="submit" value="Whitelist (Список белых доменов)" />
+    </form>
+    <form action="/filtered">
+        <input type="submit" value="Filtered (Поиск по REGexp/слову)" />
+    </form>
+    <form action="/results">
+        <input type="submit" value="Result Не найденные в списке белых доменов" />
+    </form>
+    <hr>
+{% block content %} {% endblock %}
+</body>
+
+</html>

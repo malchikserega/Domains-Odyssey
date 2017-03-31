@@ -1,0 +1,22 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<form action="/results" method="post">
+    <input type="submit" value="Update">
+</form>
+
+{% if lines %}
+<h2>{{title}} list:</h2>
+<table border="1">
+    {% for line in lines %}
+    <tr>
+        <td>{{ line[0] }}</td>
+        <td>{{ line[1] }}</td>
+        <td> <img src="/img/{{line[0]}}"></td>
+    </tr>
+    {% endfor %}
+</table>
+{% endif %}
+
+{% endblock %}

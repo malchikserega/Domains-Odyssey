@@ -1,0 +1,21 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<form action="/whitelist" method="POST" enctype="multipart/form-data">
+    <input type="file" name="file" >
+    <input type="submit" value="Добавить в базу">
+</form>
+
+{% if lines %}
+<h2>{{title}} list:</h2>
+<table border="1">
+    {% for line in lines %}
+    <tr>
+        <td>{{ line }}</td>
+    </tr>
+    {% endfor %}
+</table>
+{% endif %}
+
+{% endblock %}

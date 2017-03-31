@@ -1,0 +1,33 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<form action="/filtered" method="POST">
+    <input type="text" name="text">
+    <input type="checkbox" name="regexp">
+    <input type="submit" value="Run">
+</form>
+
+{% if table1 %}
+<h2>{{title}} list:</h2>
+<h4>Соответствует поиску</h4>
+<table title="Search" border="1">
+    {% for line in table1 %}
+    <tr>
+        <td>{{ line }}</td>
+    </tr>
+    {% endfor %}
+</table>
+{% endif %}
+{% if table2 %}
+<h4>Нет соответствий в Whitelist</h4>
+<table title="Filtered" border="1">
+    {% for line in table2 %}
+    <tr>
+        <td>{{ line }}</td>
+    </tr>
+    {% endfor %}
+</table>
+{% endif %}
+
+{% endblock %}
